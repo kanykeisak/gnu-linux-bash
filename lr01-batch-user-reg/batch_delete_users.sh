@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#[ "$1" == "with-backup" ] && echo "backup"
+# exit 9
+
 dir=`dirname $0`
 source_file="$dir/users_list.txt"
 
@@ -12,6 +15,11 @@ login=$(echo "$user_data" | awk -F ',' {'print $1'})
 echo "Delete user with login: $login ..."
 
 # commands...
+
+#if [ ??? ];then
+# make backup of user home
+# tar ??
+#fi
 
 deluser --remove-home "$login" &>>/dev/null
 
