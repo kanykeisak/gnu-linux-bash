@@ -16,9 +16,9 @@ echo "Delete user with login: $login ..."
 
 # commands...
 
-#if [ ??? ];then
+#if [ "$1" == "with-backup" ];then
 # make backup of user home
-# tar ??
+# tar /home/$login
 #fi
 
 deluser --remove-home "$login" &>>/dev/null
